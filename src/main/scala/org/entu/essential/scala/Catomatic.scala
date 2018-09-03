@@ -1,4 +1,4 @@
-package org.entu
+package org.entu.essential.scala
 
 object Black
 

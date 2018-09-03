@@ -1,4 +1,4 @@
-package org.entu
+package org.entu.essential.scala
 
 object HelloWorld {
 
@@ -8,4 +8,3 @@ object HelloWorld {
 
   def good = "some " + "love" toUpperCase
 }
-
