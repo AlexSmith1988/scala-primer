@@ -7,21 +7,30 @@ package org.entu.essential.scala
   * What is the type of the greet method? Can we use this method to greet other objects?
   */
 
-object Person {
-  var firstName = ""
-  var lastName = ""
-}
 
 object Alien {
-  def greet(person: Person.type) = s"Greetings, ${person.firstName} ${person.lastName}"
+  def greet(person: Person) = s"Greetings, ${person.firstName} ${person.lastName}"
+  def greet2console(person: Person) = println(greet(person))
 }
 
 object GreetingHuman {
   def main(args: Array[String]): Unit = {
-    Person.lastName = "Doe"
-    Person.firstName = "John"
-    println(Alien.greet(Person))
+    Alien.greet2console(Person())
+    val person = Person("Rick Sanchez")
+    assert(person.firstName == "Rick")
+    Alien.greet2console(person)
+  }
+}
 
+class Person(val firstName: String = "John", val lastName: String = "Doe")
+
+object Person {
+  def apply(firstName: String = "John", lastName: String = "Doe"): Person
+  = new Person(firstName, lastName)
+
+  def apply(fullName: String): Person = {
+    val nameParts = fullName.split(" ")
+    Person(nameParts(0), nameParts(1))
   }
 }
 
