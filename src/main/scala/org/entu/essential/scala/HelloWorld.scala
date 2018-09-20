@@ -6,5 +6,5 @@ object HelloWorld {
     println("Hello, World " + good)
   }
 
-  def good = "some " + "love" toUpperCase
+  def good: String = "some " + "love" toUpperCase
 }

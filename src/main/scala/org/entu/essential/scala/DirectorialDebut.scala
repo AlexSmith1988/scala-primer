@@ -26,6 +26,13 @@ object DirectorialDebut {
 
     println(highPlainsDrifter.copy(name = "L'homme des hautes plaines"))
     println(thomasCrownAffair.copy(yearOfRelease = 1968, director = new Director("Norman", "Jewison", 1926)))
+
+    assert(Film.highestRating(huntForRedOctober, dieHard) == dieHard)
+    println("Extended body of work")
+    println(highPlainsDrifter.directorsAge)
+    println(huntForRedOctober.directorsAge)
+    println(thomasCrownAffair.directorsAge)
+    assert(Film.oldestDirectorAtTheTime(highPlainsDrifter, thomasCrownAffair) == thomasCrownAffair)
   }
 }
 
@@ -44,6 +51,26 @@ class Film(val name: String, val yearOfRelease: Int, val imdbRating: Double, val
            director: Director = director) = new Film(name, yearOfRelease, imdbRating, director)
 
   override def toString: String = s"$name $yearOfRelease $imdbRating ${director.name} $directorsAge"
+
+}
+
+object Director {
+  def apply(firstName: String, lastName: String, yearOfBirth: Int): Director =
+    new Director(firstName, lastName, yearOfBirth)
+
+  def older(first: Director, second: Director): Director =
+    if (first.yearOfBirth > second.yearOfBirth) first else second
+}
+
+object Film {
+  def apply(name: String, yearOfRelease: Int, imdbRating: Double, director: Director): Film =
+    new Film(name, yearOfRelease, imdbRating, director)
+
+  def highestRating(first: Film, second: Film): Film =
+    if (first.imdbRating > second.imdbRating) first else second
+
+  def oldestDirectorAtTheTime(first: Film, second: Film): Film =
+    if (first.directorsAge > second.directorsAge) first else second
 
 }
 
