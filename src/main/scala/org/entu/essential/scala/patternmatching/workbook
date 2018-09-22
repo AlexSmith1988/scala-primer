@@ -1,0 +1,10 @@
+Pattern matching -> extended if expressions
+evaluates "shape" of the data
+via constructor params, only for case classes
+<expr> match {
+  case <pattern 1> => <result 1>
+  ...
+  case <pattern n> =>  <result n>
+}
+<pattern i> is called a guard
+static patterns

@@ -10,7 +10,7 @@ package org.entu.essential.scala
 
 object Alien {
   def greet(person: Person) = s"Greetings, ${person.firstName} ${person.lastName}"
-  def greet2console(person: Person) = println(greet(person))
+  def greet2console(person: Person): Unit = println(greet(person))
 }
 
 object GreetingHuman {
