@@ -5,7 +5,7 @@ trait = interface with default methods
 traits are abstractions over classes
 
 In accordance with uniform access principle,
-traits can feature def which are overloaded as val / constructor parameters,
+traits can feature def which can be overloaded as defs/vals/vars / constructor parameters,
 for example in case classes
 also traits can define val, but it is less used
 
