@@ -19,3 +19,6 @@ final case class C() extends A
 
 A has a B and a C => product type
 A is a B or is a C => sum type
+
+Structural recursion
+Product & sum type polymorphic & pattern matching
