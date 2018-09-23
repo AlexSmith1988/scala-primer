@@ -2,3 +2,13 @@ algebraic datatype = description of data
 structural recursion -> approach to mechanically transform
 algebraic datatypes
 trait = interface with default methods
+traits are abstractions over classes
+
+In accordance with uniform access principle,
+traits can feature def which are overloaded as val / constructor parameters,
+for example in case classes
+also traits can define val, but it is less used
+
+traits can be sealed, meaning extended only in current file, this is used very often
+pattern matching with missing extends cases will issue a warning
+classes can be sealed and final
