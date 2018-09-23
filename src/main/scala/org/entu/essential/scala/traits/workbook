@@ -1,0 +1,4 @@
+algebraic datatype = description of data
+structural recursion -> approach to mechanically transform
+algebraic datatypes
+trait = interface with default methods
