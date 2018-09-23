@@ -1,0 +1,21 @@
+Modeling data with traits
+
+logical ors and ands + is-a and has-a = sum and product types = algebraic data types = ADT
+
+Product type pattern:
+If A has a b of type B and a c of type C,
+case class A(b: B, c: C)
+trait A{
+  def b: B
+  def c: C
+}
+
+Sum type pattern:
+a number of cases
+A is B or C
+sealed trait A:
+final case class B() extends A
+final case class C() extends A
+
+A has a B and a C => product type
+A is a B or is a C => sum type
