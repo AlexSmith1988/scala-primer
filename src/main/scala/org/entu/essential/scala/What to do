@@ -1,4 +1,11 @@
 3.3.2.2 Extended Body of Work +
 3.4 Case classes +
-4 Modelling Data with Traits
-4.5.5 Object-Oriented vs Functional Extensibility
+4 Modelling Data with Traits +
+4.5.5 Object-Oriented vs Functional Extensibility +
+
+Todo
+- pattern matching
+- partial functions
+- value/name functions
+- implicits
+- method to function conversion, expression like operation
