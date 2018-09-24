@@ -1,0 +1,3 @@
+base case (non-recursive) + recursive case
+base case -> identity
+identity: element that doesn't change the result

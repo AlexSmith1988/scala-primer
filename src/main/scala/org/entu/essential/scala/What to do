@@ -2,6 +2,8 @@
 3.4 Case classes +
 4 Modelling Data with Traits +
 4.5.5 Object-Oriented vs Functional Extensibility +
+4.6.1 Understanding the Base Case and Recursive Case +
+4.6.2
 
 Todo
 - pattern matching
