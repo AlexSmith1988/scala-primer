@@ -4,11 +4,13 @@
 4.5.5 Object-Oriented vs Functional Extensibility +
 4.6.1 Understanding the Base Case and Recursive Case +
 4.6.2 +
-4.7
+4.7 +
+5.2.1 Function Types
 
 Todo
 - pattern matching
 - partial functions
+- method to function conversion
+- expression like operation
 - value/name functions
 - implicits
-- method to function conversion, expression like operation
