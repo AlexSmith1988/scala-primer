@@ -1,0 +1,4 @@
+generics => abstraction over types
+functions => abstraction over methods
+
+Invariant generic sum type pattern
