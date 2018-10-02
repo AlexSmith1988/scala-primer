@@ -2,22 +2,22 @@ package org.entu.essential.scala.sequencing.computations.functions
 
 object RecursiveData {
   def main(args: Array[String]): Unit = {
-    val example = Pair(1, Pair(2, Pair(3, End)))
+    val example = Pair(1, Pair(2, Pair(3, RecursiveEnd)))
     assert(example.sum == 6)
     assert(example.tail.sum == 5)
-    assert(End.sum == 0)
+    assert(RecursiveEnd.sum == 0)
 
     assert(example.length == 3)
     assert(example.tail.length == 2)
-    assert(End.length == 0)
+    assert(RecursiveEnd.length == 0)
 
     assert(example.product == 6)
     assert(example.tail.product == 6)
-    assert(End.product == 1)
+    assert(RecursiveEnd.product == 1)
 
-    assert(example.double == Pair(2, Pair(4, Pair(6, End))))
-    assert(example.tail.double == Pair(4, Pair(6, End)))
-    assert(End.double == End)
+    assert(example.double == Pair(2, Pair(4, Pair(6, RecursiveEnd))))
+    assert(example.tail.double == Pair(4, Pair(6, RecursiveEnd)))
+    assert(RecursiveEnd.double == RecursiveEnd)
   }
 }
 
@@ -34,15 +34,15 @@ sealed trait IntList {
       case _ => end
     }
 
-  def double: IntList = fold(End, (x, y: IntList) => Pair(2 * x, y))
+  def double: IntList = fold(RecursiveEnd, (x, y: IntList) => Pair(2 * x, y))
 
   def map(f: Int => Int): IntList =
     this match {
       case Pair(head, tail) => Pair(f(head), tail.map(f))
-      case _ => End
+      case _ => RecursiveEnd
     }
 }
 
-case object End extends IntList
+case object RecursiveEnd extends IntList
 
 final case class Pair(head: Int, tail: IntList) extends IntList

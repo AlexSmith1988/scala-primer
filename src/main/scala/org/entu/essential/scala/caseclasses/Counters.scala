@@ -18,11 +18,16 @@ object Counters {
 
 case class Counter(count: Int = 0) {
   def inc(amount: Int = 1): Counter = copy(count + amount)
+
   def inc: Counter = inc()
+
   def dec(amount: Int = 1): Counter = copy(count - amount)
+
   def dec: Counter = dec()
 
   def adjust(adder: Adder): Counter = copy(adder(count))
+
+  def adjust2(func: Int => Int): Counter = Counter(func(count))
 }
 
 object Counter {

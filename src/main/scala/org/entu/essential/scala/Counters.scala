@@ -1,4 +1,4 @@
-
+package org.entu.essential.scala
 
 object Counters {
   def main(args: Array[String]): Unit = {
@@ -33,5 +33,5 @@ object Counter {
 }
 
 class Adder(amount: Int) {
-  def apply(in: Int) = in + amount
+  def apply(in: Int): Int = in + amount
 }
