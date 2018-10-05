@@ -23,3 +23,4 @@ case class Test[A](count: A) {
 Test(2).adjust(Add.add1)
 Test("Yeah").adjust(_ + " Wow")
 
+identity()

@@ -12,3 +12,7 @@ sum(10, 20)
 
 val double = (x: Int) => 2 * x
 
+def example(x: Int)(y: Int) = x + y
+
+example(1)(2)
+
