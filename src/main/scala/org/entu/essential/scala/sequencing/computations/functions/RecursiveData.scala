@@ -1,5 +1,7 @@
 package org.entu.essential.scala.sequencing.computations.functions
 
+import org.scalatest.Assertions._
+
 object RecursiveData {
   def main(args: Array[String]): Unit = {
     val example = Pair(1, Pair(2, Pair(3, RecursiveEnd)))
