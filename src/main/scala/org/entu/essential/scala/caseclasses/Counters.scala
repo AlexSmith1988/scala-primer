@@ -1,5 +1,7 @@
 package org.entu.essential.scala.caseclasses
 
+import org.scalatest.Assertions._
+
 object Counters {
   def main(args: Array[String]): Unit = {
     assert(Counter(10).inc.dec.inc.inc.count == 12)

@@ -6,8 +6,9 @@
 4.6.2 +
 4.7 +
 5.2.1 Function Types +
-5.3 Generic Folds for Generic Data
-5.3.3.1 Multiple Parameter Lists
+5.3 Generic Folds for Generic Data +
+5.3.3.1 Multiple Parameter Lists +
+5.4.3 Generic Sum Types
 
 Todo
 - pattern matching
