@@ -4,20 +4,21 @@ import org.scalatest.Assertions._
 
 object GenericSum {
   def main(args: Array[String]): Unit = {
-    assert(Left(1).value == 1)
+    assert(Left(1).fold(String.valueOf, identity) == "1")
     assert(Right("Test").value == "Test")
     val sum: Sum[Int, String] = Right("foo")
 
-    assert(
-      "foo" ==
-        (sum match {
-          case Left(value) => value.toString
-          case Right(value) => value
-        }))
+    assert("foo" == sum.fold(String.valueOf , identity))
   }
 }
 
-sealed trait Sum[A, B]
+sealed trait Sum[A, B] {
+  def fold[C](left: A => C, right: B => C): C =
+    this match {
+      case Left(value) => left(value)
+      case Right(value) => right(value)
+    }
+}
 
 final case class Left[A, B](value: A) extends Sum[A, B]
 
