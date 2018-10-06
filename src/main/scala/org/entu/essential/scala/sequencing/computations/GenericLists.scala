@@ -46,6 +46,12 @@ sealed trait LinkedList[A] {
       case Pair(head, tail) => if (offset == 0) Success(head) else tail(offset - 1)
       case _ => Failure("Index out of bounds")
     }
+
+  def map[B](fn: A => B): LinkedList[B] =
+    this match {
+      case Pair(head, tail) => Pair(fn(head), tail.map(fn))
+      case End() => End()
+    }
 }
 
 final case class End[A]() extends LinkedList[A]
