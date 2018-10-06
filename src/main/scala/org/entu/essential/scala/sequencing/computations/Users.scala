@@ -5,7 +5,10 @@ import org.entu.essential.scala.sequencing.computations.genericmodeling.{Empty, 
 
 object Users {
   def main(args: Array[String]): Unit = {
-    val t = Pair(1, Pair(2, End())).map(load)
+    val t =
+      Pair(1, Pair(2, End()))
+        .map(load)
+        .map(maybeUser => maybeUser.fold("No user loaded", _ => Order(10)))
     println(t)
   }
 

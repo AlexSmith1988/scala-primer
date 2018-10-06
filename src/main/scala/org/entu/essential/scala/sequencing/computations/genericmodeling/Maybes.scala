@@ -2,7 +2,7 @@ package org.entu.essential.scala.sequencing.computations.genericmodeling
 
 object Maybes {
   def main(args: Array[String]): Unit = {
-    val empty: Maybe[Int] = Empty[Int]
+    val empty: Maybe[Int] = Empty()
     println(empty)
     // perhaps: Maybe[Int] = Empty()
 
@@ -18,6 +18,12 @@ sealed trait Maybe[A] {
     this match {
       case Empty() => empty
       case Full(value) => full(value)
+    }
+
+  def flatMap[B](mapping: A => Maybe[B]): Maybe[B] =
+    this match {
+      case Empty() => Empty()
+      case Full(value) => mapping(value)
     }
 }
 
