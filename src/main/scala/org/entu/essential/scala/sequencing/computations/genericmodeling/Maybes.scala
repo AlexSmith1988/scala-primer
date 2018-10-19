@@ -25,6 +25,14 @@ sealed trait Maybe[A] {
       case Empty() => Empty()
       case Full(value) => mapping(value)
     }
+
+  def map[B](mapping: A => B): Maybe[B] =
+    this match {
+      case Empty() => Empty()
+      case Full(value) => Full(mapping(value))
+    }
+
+  def mapf[B](mapping: A => B): Maybe[B] = flatMap(a => Full(mapping(a)))
 }
 
 final case class Full[A](value: A) extends Maybe[A]

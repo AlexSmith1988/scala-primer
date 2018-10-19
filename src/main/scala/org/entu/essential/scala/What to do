@@ -8,12 +8,15 @@
 5.2.1 Function Types +
 5.3 Generic Folds for Generic Data +
 5.3.3.1 Multiple Parameter Lists +
-5.4.3 Generic Sum Types
+5.4.3 Generic Sum Types +
+5.5.2 FlatMap +
+5.5.3 Functors and Monads +
+5.5.4.3 Sequencing Computations +
+5.5.4.4 Sum
 
 Todo
 - pattern matching
 - partial functions
-- method to function conversion
-- expression like operation
+- method to function conversion - expression like operation
 - value/name functions
 - implicits
