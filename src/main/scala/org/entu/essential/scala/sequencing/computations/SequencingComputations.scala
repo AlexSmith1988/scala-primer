@@ -9,6 +9,6 @@ object SequencingComputations {
     println(list.map(el => List(el, -el)))
 
     val list2 = List(Full(3), Full(2), Full(1))
-    print(list2.map(maybe => maybe.flatMap(x => if (x % 2 == 0) Full(x) else Empty[Int])))
+    print(list2.map(maybe => maybe.flatMap(x => if (x % 2 == 0) Full(x) else Empty)))
   }
 }

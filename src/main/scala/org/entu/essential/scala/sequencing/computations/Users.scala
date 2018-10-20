@@ -15,7 +15,7 @@ object Users {
   def load(id: Int): Maybe[User] =
     id % 2 match {
       case 1 => Full(User(id))
-      case 0 => Empty()
+      case 0 => Empty
     }
 }
 

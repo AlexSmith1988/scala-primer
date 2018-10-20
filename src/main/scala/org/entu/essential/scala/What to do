@@ -12,7 +12,10 @@
 5.5.2 FlatMap +
 5.5.3 Functors and Monads +
 5.5.4.3 Sequencing Computations +
-5.5.4.4 Sum
+5.5.4.4 Sum +
+5.6.2 Function Types +
+5.6.3 Covariant Sum Types +
+5.6.4 Contravariant Position
 
 Todo
 - pattern matching
