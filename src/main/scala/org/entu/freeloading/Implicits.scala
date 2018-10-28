@@ -1,21 +1,54 @@
 package org.entu.freeloading
 
 object Implicits {
+  def apply[T](block: T => Int): T => Double = (t: T) => block(t) * 2.0
+
+  def doSome(): Unit = {
+    val intToDouble: Int => Double = Implicits { _: Int => 10 }
+    println(intToDouble)
+  }
+
+  def main(args: Array[String]): Unit = {
+    doSome()
+  }
+}
+
+object SimpleImplicit {
+
+  def main(args: Array[String]): Unit = {
+    Foo(42) printSome
+  }
+
+  implicit def fooWrapper(foo: Foo): Bar = new Bar {
+    def getSome: Int = foo.payload
+  }
+
+  case class Foo(payload: Int)
+
+  trait Bar {
+    def printSome: Unit = println(getSome)
+
+    def getSome: Any
+  }
+
 }
 
 abstract class Monoid[A] {
   def add(x: A, y: A): A
+
   def unit: A
 }
 
 object ImplicitTest {
   implicit val stringMonoid: Monoid[String] = new Monoid[String] {
     def add(x: String, y: String): String = x concat y
+
     def unit: String = ""
   }
 
   implicit val intMonoid: Monoid[Int] = new Monoid[Int] {
     def add(x: Int, y: Int): Int = x + y
+
     def unit: Int = 0
   }
 
@@ -24,7 +57,7 @@ object ImplicitTest {
     else m.add(xs.head, sum(xs.tail))
 
   def main(args: Array[String]): Unit = {
-    println(sum(List(1, 2, 3)))       // uses IntMonoid implicitly
+    println(sum(List(1, 2, 3))) // uses IntMonoid implicitly
     println(sum(List("a", "b", "c"))) // uses StringMonoid implicitly
   }
 }
