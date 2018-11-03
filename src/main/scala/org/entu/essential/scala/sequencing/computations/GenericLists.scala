@@ -22,6 +22,9 @@ object GenericLists {
     assert(example(1) == Success(2))
     assert(example(2) == Success(3))
     assert(example(3) == Failure("Index out of bounds"))
+
+    val list: LinkedList[Int] = Pair(1, Pair(2, Pair(3, End())))
+    println(list.map(_ * 2).map(_ + 1).map(_ / 3))
   }
 }
 
@@ -45,6 +48,12 @@ sealed trait LinkedList[A] {
     this match {
       case Pair(head, tail) => if (offset == 0) Success(head) else tail(offset - 1)
       case _ => Failure("Index out of bounds")
+    }
+
+  def map[B](fn: A => B): LinkedList[B] =
+    this match {
+      case Pair(head, tail) => Pair(fn(head), tail.map(fn))
+      case End() => End()
     }
 }
 
