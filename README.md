@@ -1,3 +1,3 @@
 # scala-primers
 
-Repository for Scala Learning
+Repository for learning Scala
