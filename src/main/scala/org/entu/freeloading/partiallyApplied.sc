@@ -1,6 +1,6 @@
 val sum3 = (a: Int, b: Int, c: Int) => a + b + c
 
-val sum2 = sum3(1, _: Int, _: Int)
+val sum2 = sum3(1, _, _)
 
 sum2(10, 20)
 
